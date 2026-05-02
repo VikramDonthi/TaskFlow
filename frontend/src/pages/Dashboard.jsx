@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../api';
 import { useAuth } from '../context/AuthContext';
 import { Link } from 'react-router-dom';
 import { Folder, Plus, BarChart3, Clock, CheckCircle, Circle, ArrowRight } from 'lucide-react';
@@ -21,7 +21,7 @@ const Dashboard = () => {
 
     const fetchUsers = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/auth/users');
+            const res = await api.get('/auth/users');
             setAllUsers(res.data);
         } catch (error) {
             console.error("Error fetching users:", error);
@@ -31,8 +31,8 @@ const Dashboard = () => {
     const fetchData = async () => {
         try {
             const [projRes, taskRes] = await Promise.all([
-                axios.get('http://localhost:5000/api/projects'),
-                axios.get('http://localhost:5000/api/tasks')
+                api.get('/projects'),
+                api.get('/tasks')
             ]);
             setProjects(projRes.data);
             setTasks(taskRes.data);
@@ -44,7 +44,7 @@ const Dashboard = () => {
     const handleCreateProject = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/api/projects', { ...newProject, members: selectedMembers });
+            await api.post('/projects', { ...newProject, members: selectedMembers });
             setNewProject({ name: '', description: '' });
             setSelectedMembers([]);
             setShowCreate(false);

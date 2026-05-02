@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import api from '../api';
 import { useAuth } from '../context/AuthContext';
-import { MessageSquare, Calendar, User as UserIcon, Plus } from 'lucide-react';
+import { MessageSquare, Calendar, User as UserIcon, Plus, Folder } from 'lucide-react';
 
 const ProjectDetails = () => {
     const { id } = useParams();
@@ -25,8 +25,8 @@ const ProjectDetails = () => {
     const fetchData = async () => {
         try {
             const [projRes, taskRes] = await Promise.all([
-                axios.get(`http://localhost:5000/api/projects/${id}`),
-                axios.get(`http://localhost:5000/api/tasks?projectId=${id}`)
+                api.get(`/projects/${id}`),
+                api.get(`/tasks?projectId=${id}`)
             ]);
             setProject(projRes.data);
             setTasks(taskRes.data);
@@ -42,7 +42,7 @@ const ProjectDetails = () => {
 
     const fetchUsers = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/auth/users');
+            const res = await api.get('/auth/users');
             setUsers(res.data);
         } catch (error) {
             console.error("Error fetching users:", error);
@@ -52,7 +52,7 @@ const ProjectDetails = () => {
     const handleCreateTask = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/api/tasks', { ...newTask, projectId: id });
+            await api.post('/tasks', { ...newTask, projectId: id });
             setNewTask({ title: '', description: '', assignedTo: '', dueDate: '' });
             setShowCreateTask(false);
             fetchData();
@@ -64,7 +64,7 @@ const ProjectDetails = () => {
     const handleUpdateProject = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`http://localhost:5000/api/projects/${id}`, editProject);
+            await api.put(`/projects/${id}`, editProject);
             setEditMode(false);
             fetchData();
         } catch (error) {
@@ -74,7 +74,7 @@ const ProjectDetails = () => {
 
     const handleStatusChange = async (taskId, newStatus) => {
         try {
-            await axios.put(`http://localhost:5000/api/tasks/${taskId}`, { status: newStatus });
+            await api.put(`/tasks/${taskId}`, { status: newStatus });
             fetchData();
         } catch (error) {
             console.error("Error updating status:", error);
@@ -84,7 +84,7 @@ const ProjectDetails = () => {
     const handleAddComment = async (taskId) => {
         if (!commentInputs[taskId]) return;
         try {
-            await axios.post(`http://localhost:5000/api/tasks/${taskId}/comment`, { message: commentInputs[taskId] });
+            await api.post(`/tasks/${taskId}/comment`, { message: commentInputs[taskId] });
             setCommentInputs({ ...commentInputs, [taskId]: '' });
             fetchData();
         } catch (error) {

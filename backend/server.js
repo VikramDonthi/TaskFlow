@@ -9,8 +9,28 @@ const taskRoutes = require('./routes/tasks');
 
 const app = express();
 
-app.use(cors());
+// Production CORS Configuration
+const allowedOrigins = [
+  process.env.FRONTEND_URL, 
+  'http://localhost:5173', 
+  'http://localhost:5174'
+].filter(Boolean);
+
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
+}));
+
 app.use(express.json());
+
+// Health Check
+app.get('/health', (req, res) => res.status(200).json({ status: 'ok' }));
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected'))
