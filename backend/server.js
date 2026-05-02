@@ -32,9 +32,15 @@ app.use(express.json());
 // Health Check
 app.get('/health', (req, res) => res.status(200).json({ status: 'ok' }));
 
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('MongoDB connected'))
-  .catch(err => console.log(err));
+const connectDB = async () => {
+  if (mongoose.connection.readyState >= 1) return;
+  return mongoose.connect(process.env.MONGO_URI);
+};
+
+app.use(async (req, res, next) => {
+  await connectDB();
+  next();
+});
 
 app.use('/api/auth', authRoutes);
 app.use('/api/projects', projectRoutes);
