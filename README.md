@@ -12,6 +12,7 @@ TaskFlow isn't just a tool; it's an experience.
 - **Interactive Backgrounds**: Dynamic mesh gradients and moving "blobs" that bring the interface to life.
 - **Personalized Experience**: Time-based greetings and human-centric copy tailored to the user's role.
 - **Responsive & Accessible**: Optimized for all screen sizes with clear labeling and intuitive navigation.
+- **Humanistic Progress Updates**: Team members can add meaningful status messages and progress updates directly to tasks, fostering better communication.
 
 ---
 
@@ -22,10 +23,11 @@ TaskFlow distinguishes between two primary roles, ensuring security and organiza
 | :--- | :--- | :--- |
 | **Project Creation** | ✅ Full Control | ❌ View Only |
 | **Member Assignment** | ✅ Can add/remove members | ❌ View Only |
-| **Task Management** | ✅ Create/Edit/Delete all tasks | ❌ View Assigned Only |
+| **Task Management** | ✅ Create/Edit/Delete all tasks | ✅ Update status & Provide progress messages |
 | **Team Performance** | ✅ View individual member stats | ❌ Private View |
 | **Project Visibility** | ✅ Sees all projects | 👁️ Sees assigned projects only |
 | **Dashboard** | 📊 Aggregated Team Overview | 📋 Personal Task Tracker |
+| **Progress Updates** | ✅ Monitor all updates | ✅ Add humanistic status messages |
 
 ---
 
