@@ -10,20 +10,8 @@ const taskRoutes = require('./routes/tasks');
 const app = express();
 
 // Production CORS Configuration
-const allowedOrigins = [
-  process.env.FRONTEND_URL, 
-  'http://localhost:5173', 
-  'http://localhost:5174'
-].filter(Boolean);
-
 app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+  origin: true,
   credentials: true
 }));
 
