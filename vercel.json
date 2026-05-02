@@ -3,24 +3,7 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/backend/server.js"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/frontend/$1"
+      "destination": "/api/index.js"
     }
-  ],
-  "redirects": [
-    {
-      "source": "/",
-      "destination": "/frontend/",
-      "permanent": true
-    }
-  ],
-  "functions": {
-    "backend/server.js": {
-      "memory": 1024,
-      "maxDuration": 10
-    }
-  }
+  ]
 }
