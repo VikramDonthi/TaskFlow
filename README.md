@@ -111,5 +111,10 @@ Used `Promise.all` for parallel data fetching in the dashboard to ensure fast lo
 Contributions are welcome! Feel free to fork the repository and submit a Pull Request.
 
 ---
+App credentials
+admin@taskflow.com
+member2@taskflow.com
+member2@taskflow.com
+pass: Test@123
 
 **Developed with ❤️ by Vikram Donthi**
