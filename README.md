@@ -116,5 +116,8 @@ admin@taskflow.com
 member2@taskflow.com
 member2@taskflow.com
 pass: Test@123
+or user can register new .
+
+---
 
 **Developed with ❤️ by Vikram Donthi**
