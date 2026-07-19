@@ -1,3 +1,4 @@
+
 # TaskFlow - Full-Stack Project Management Platform
 
 ## Project Description for Portfolio
@@ -78,6 +79,15 @@ Modern teams struggle with project management tools that are either overly compl
 - Build production-ready applications with attention to performance
 
 ---
+<img width="1911" height="1048" alt="main" src="https://github.com/user-attachments/assets/709f9670-83da-4be7-8496-45a424dc2b54" />
+<img width="1912" height="1041" alt="screenshot6" src="https://github.com/user-attachments/assets/ba595549-4e50-465d-8749-b02b7b045238" />
+<img width="1907" height="1047" alt="screenshot5" src="https://github.com/user-attachments/assets/459b8626-1ec9-43c0-a398-7fe2186dbbc0" />
+<img width="1905" height="1015" alt="screenshot4" src="https://github.com/user-attachments/assets/112a0a42-46bd-44e3-b3c6-08fccd73ff3f" />
+<img width="1910" height="1050" alt="screenshot3" src="https://github.com/user-attachments/assets/ba0f6d7a-63b7-47a6-be51-29a2aa004d4f" />
+<img width="1805" height="1026" alt="screenshot2" src="https://github.com/user-attachments/assets/ddcc4e34-512b-46e6-962a-97fe919ce484" />
+<img width="1901" height="1045" alt="screenshot1" src="https://github.com/user-attachments/assets/3c5160d7-2929-487e-8f4d-c460eaf47568" />
+
+--- 
 
 *"TaskFlow represents my commitment to building software that doesn't just function well, but feels good to use. It's the intersection of robust engineering and thoughtful design."*
 # 🚀 TaskFlow
