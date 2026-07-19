@@ -85,6 +85,8 @@ cd TaskFlow
    ```
 
 ### 3. Frontend Configuration
+in rootfolder run npm start
+
 1. Navigate to the `frontend` folder.
 2. Install dependencies and start:
    ```bash
